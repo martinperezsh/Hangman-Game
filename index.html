@@ -4,31 +4,26 @@
 	<title>Hangin-Man</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script src="assets/javascript/game.js"></script>
 	
 </head>
 <body>
-	
-	<div>
-		<h1>Legendary Hip-Hop Artist Hang-Man</h1>
-	</div>
-	<!-- Game -->
-	<div>
-		<h2>Press any key to get started!</h2>
-	</div>
-<br>
-	<div>
-		<h2 id="wins">Wins:</h2>
-	</div>
-<br>
-	<div>
-		<h2>Current Word</h2>
-			<p id="chosenWord"></p>
-	</div>
-<br>
-	<div>
-		<h2>Letters Guessed</h2>
-			<p></p>
-	</div>
+	<h1>Press any key to get started</h1>
+	<br>
+	<br>
+	<h2>Current Word: </h2>
+	<span id="currentWord"></span>
+	<br>
+	<br>
+	<h2>Number of guesses remaining:</h2>
+	<span id="guessesLeft"></span>
+	<br>
+	<br>
+	<h2>Letters Guessed:</h2>
+	<span id="ltrsGuessed"></span>
+	<br>
+	<br>
+	<h2>Wins: <span id="winCount"></span> </h2>
+
+	<script src="assets/javascript/game.js"></script>
 </body>
 </html>

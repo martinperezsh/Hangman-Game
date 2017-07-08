@@ -1,30 +1,34 @@
-// Game words
-var words = ['nas', 'biggie', 'tupac', 'eminem', 'raekwon'];
-console.log(words)
-
+var words = ['luffy', 'zoro', 'nami', 'usopp', 'sanji', 'chopper', 'robin', 'franky', 'brook', 'jimbei'];
 var wins = 0;
-var lettersGuessed = [];
-var losses = 0;
-var i = 0;
+var guessesLeft = 15;
+var chosenWord = '';
+var lettersInWord = [];
+var numberBlanks = 0;
+var blanksAndSuccesses = [];
+var wrongGuesses = [];
 
-var random = words[Math.floor(Math.random() * words.length)];
+function gameStart() {
+	chosenWord = words[Math.floor(Math.random() * words.length)];
+	lettersInWord = chosenWord.split('');
+	numberBlanks = lettersInWord.length;
 
-  // Get started key
-document.onkeyup = function(start){
-
-
-	if (random = 'nas') {
-		document.getElementById('chosenWord').innerHTML = "_ _ _";
-	} else if (random = 'biggie') {
-		document.getElementById('chosenWord').innerHTML = "_ _ _ _ _ _";
-	} else if (random = 'tupac') {
-		document.getElementById('chosenWord').innerHTML = "_ _ _ _ _";
-	} else if (random = 'eminem') {
-		document.getElementById('chosenWord').innerHTML = "_ _ _ _ _ _";
-	} else if (random = 'raekwon') {
-		document.getElementById('chosenWord').innerHTML = "_ _ _ _ _ _ _"
+	guessesLeft = 15;
+	wrongGuesses = [];
+	blanksAndSuccesses = [];
+// turning word into blanks
+	for (var i = 0; i < numberBlanks; i++) {
+		blanksAndSuccesses.push('_');
 	}
 
-	
-	
+	document.getElementById('currentWord').innerHTML = blanksAndSuccesses.join(" ");
+	document.getElementById('guessesLeft').innerHTML = guessesLeft;
+	document.getElementById('winCount').innerHTML = wins;
+
+
+}
+
+gameStart()
+
+document.onkeyup = function(event) {
+	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 }
